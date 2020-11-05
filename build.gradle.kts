@@ -1,7 +1,7 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    kotlin("jvm") version Versions.KOTLIN apply false
+    kotlin("jvm") version Versions.KOTLIN
 }
 
 allprojects {
@@ -9,9 +9,16 @@ allprojects {
         jcenter()
     }
 
-    tasks.withType(KotlinCompile::class.java).all {
-        kotlinOptions {
-            jvmTarget = "1.8"
-        }
+    tasks.withType<Javadoc>().configureEach {
+        (options as StandardJavadocDocletOptions).addStringOption("Xdoclint:none", "-quiet")
+    }
+
+    tasks.withType<JavaCompile>().configureEach {
+        sourceCompatibility = Versions.JVM_TARGET
+        targetCompatibility = Versions.JVM_TARGET
+    }
+
+    tasks.withType<KotlinCompile>().configureEach {
+        kotlinOptions.jvmTarget = Versions.JVM_TARGET
     }
 }

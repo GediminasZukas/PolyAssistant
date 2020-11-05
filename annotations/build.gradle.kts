@@ -1,12 +1,14 @@
 plugins {
     id("kotlin")
+    maven
 }
 
-repositories {
-    mavenCentral()
+java {
+    withSourcesJar()
+    withJavadocJar()
 }
 
 dependencies {
-    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+    implementation(Libs.KOTLIN_STDLIB)
     implementation(Libs.GSON)
 }

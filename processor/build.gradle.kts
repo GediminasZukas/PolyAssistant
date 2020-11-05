@@ -1,19 +1,10 @@
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
-
 plugins {
     id("kotlin")
-}
-
-tasks.withType<KotlinCompile> {
-    kotlinOptions.jvmTarget = "1.8"
-}
-
-repositories {
-    mavenCentral()
+    maven
 }
 
 dependencies {
-    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+    implementation(Libs.KOTLIN_STDLIB)
     implementation(project(":annotations"))
     implementation(Libs.KOTLIN_POET)
     implementation(Libs.GSON)
