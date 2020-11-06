@@ -59,6 +59,10 @@ Annotation processor basically generates [RuntimeTypeAdapterFactory](https://git
 ### Download
 
 ```
+repositories {
+    maven { setUrl("https://jitpack.io") }
+}
+    
 dependencies {
     implementation("com.gediminaszukas.polyassistant:annotations:<version>")
     kapt("com.gediminaszukas.polyassistant:processor:<version>")
