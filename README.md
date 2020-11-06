@@ -50,7 +50,7 @@ GsonBuilder().apply {
 
 Wolla! Step 2 is required only once. For further problems just annotate your types like in step 1.
 
-Library supports not only sealed classes but also other languge-common polymorphic types hierarchies. 
+Library supports not only sealed classes but also other language-common polymorphic types hierarchies. 
 
 ### Internals
 
